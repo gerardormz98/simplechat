@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    .card-text {
+        min-height: 5rem;
+    }
+</style>
+
+<div>
+    <h3>Welcome to the chat!</h3>
+    <hr />
+
+    <form method="post">
+        <p>
+            <span asp-validation-for="Username" class="text-danger mb-3"></span>
+        </p>
+
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text">@@</span>
+            </div>
+            <input asp-for="Username" class="form-control" placeholder="Pick a username" />
+        </div>
+
+        <p class="lead text-center">Select a chat room:</p>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">General</h5>
+                        <p class="card-text">General purpose chat. Let's make some friends!</p>
+                        <button name="chatroom" value="General" class="btn btn-primary">Enter room</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Movies</h5>
+                        <p class="card-text">Let's chat about our favorite movies!</p>
+                        <button name="chatroom" value="Movies" class="btn btn-primary">Enter room</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gaming</h5>
+                        <p class="card-text">If you are a gamer, you need to join this room!</p>
+                        <button name="chatroom" value="Gaming" class="btn btn-primary">Enter room</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Music</h5>
+                        <p class="card-text">Do you really love music? Let's have a chat!</p>
+                        <button name="chatroom" value="Music" class="btn btn-primary">Enter room</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

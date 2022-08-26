@@ -1,0 +1,14 @@
+﻿#messages-area {
+    height: calc(100vh - 270px);
+    overflow-y: auto;
+}
+
+.message {
+    width: fit-content;
+    border-radius: 10px;
+    min-width: 30%;
+}
+
+.message-user {
+    font-weight: 600;
+}

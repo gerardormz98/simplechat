@@ -1,0 +1,35 @@
+﻿@page
+@model SimpleChat.Pages.ChatModel
+@{
+    ViewData["Title"] = "Live Chat";
+    ViewData["Username"] = Model.Username;
+}
+
+@section Styles {
+    <link href="~/css/chat.css" rel="stylesheet" />
+}
+
+<div class="d-flex flex-column">
+    <div>
+        <h3>@Model.ChatRoom</h3>
+        <input type="hidden" asp-for="Username" />
+        <input type="hidden" asp-for="ChatRoom" />
+        <hr />
+    </div>
+
+    <div id="messages-area" class="border rounded-sm bg-light"></div>
+
+    <form id="form-send-message">
+        <div class="input-group mt-3">
+            <input type="text" name="message" id="txt-message" class="form-control" placeholder="Type a message..." />
+            <div class="input-group-append">
+                <button class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/chat.js"></script>
+}
